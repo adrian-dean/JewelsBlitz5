@@ -1,0 +1,17 @@
+https://html5.api.gamedistribution.com/libs/gd/api.js
+//html5.api.gamedistribution.com/libs/gd/api.js
+patch/js/gd-sdk.js?html5.api.gamedistribution.com/libs/gd/api.js
+
+https://html5.api.gamedistribution.com/main.min.js
+//html5.api.gamedistribution.com/main.min.js
+patch/js/gd-sdk.js?html5.api.gamedistribution.com/main.min.js
+
+https://h5gamessdk.yyggames.com/sdk/YYGSDK.js
+//h5gamessdk.yyggames.com/sdk/YYGSDK.js
+patch/js/YYGGames.js
+
+${a}/gamepush.js
+patch/js/eponesh-gamepush.js
+
+"azerion-libs.min.js"
+"patch/js/azerion-libs-m.js"
