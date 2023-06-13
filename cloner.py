@@ -1,5 +1,7 @@
 import os
 import clonerex
+import cloudflare
+
 from flask import Flask, request, Response, redirect
 
 app = Flask(__name__, static_url_path='', static_folder='public_html')
@@ -76,6 +78,8 @@ if game_name!= os.getenv("REPL_SLUG"):
   os.system("rm *.zip")
   os.system("rm patch.txt")
   open("game_name.txt", "w").write(os.getenv("REPL_SLUG"))
+  open("game_host.txt", "w").write(".ubg235.com")
   open("game_source.txt", "w").write("https://gamedistribution.com/games/"+ os.getenv("REPL_SLUG"))
-  
+
+cloudflare.cloudflareAutoDNS()
 app.run(host='0.0.0.0', port=81)

@@ -1,0 +1,19 @@
+{
+    "platform": "azerion",
+    "gameSlug": "fish-story-2",
+    "gameBuild": "1.0.5",
+    "gameID": "e6f0ada1e9f4403cb2b0a6f27b3178e0",
+    "gameTitle": "Fish Story 2",
+    "interface": "FBInstant",
+    "leaderboardSupport": false,
+    "inAppPurchase": false,
+    "adsConfig": {
+      "rewarded": true,
+      "adFreeInitialLevels": 0,
+      "interstitialCooldownLevel": 0,
+      "longGameplayCooldownMS": 150000,
+      "enableLongGameplayAds": true,
+      "supportsAdPlayButton": false
+    }
+  }
+  

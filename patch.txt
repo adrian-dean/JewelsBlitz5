@@ -1,15 +1,5 @@
-public_html/index.html
+/home/runner/fish-story-2/public_html/lib/AzerionWrapper_v2.5.4.js
 data/patch_guide.txt
 https://html5.api.gamedistribution.com/main.min.js
 patch/js/gd-sdk.js?html5.api.gamedistribution.com/main.min.js
-
-public_html/index.html
-data/patch_guide_null.txt
-window.open(
-window.xopen(
-
-/home/runner/king-of-mahjong/public_html/MahjongKing_wasm.js
-data/patch_guide_null.txt
-window.open(
-window.xopen(
 
