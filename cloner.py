@@ -19,6 +19,12 @@ def index():
       index_html= open("system/404.html").read()
   return index_html
 
+@app.route('/<path:u_path>', methods= ["POST"])
+def all_post(u_path):
+  print("--all_post--", u_path)
+  return "{}"
+  
+
 @app.route('/sw.js')
 def sw():
   return Response(open("system/sw.js", "rb").read(), mimetype='text/javascript')

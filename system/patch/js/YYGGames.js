@@ -2,6 +2,31 @@ if (typeof consoleLog== 'undefined') {
   consoleLog= console.log;
 }
 
+xlocation= new Proxy(location, {
+  get: function(target, property, receiver) {
+    console.log("--fx--xlocation--get--property--", property);
+    let targetObj = target[property];
+    if (typeof targetObj == "function") {
+      return (...args) => target[property].apply(target, args);
+    } else {
+      if (property== "host" || property=="hostname") {
+        return "localhost";
+      }
+      if (property== "href") {
+        return "https://localhost/";
+      }
+      if (property== "origin") {
+        return "https://localhost/";
+      }
+      return targetObj;
+    }
+  },
+  set: function(target, property, receiver) {
+    console.log("--fx--xlocation--set--property--", property, receiver);
+    return true;
+  }
+});
+
 YYG= {
   TYPE: {
     INTERSTITIAL: 0,
@@ -31,18 +56,50 @@ YYGamesList= [{
 }];
 
 YYGGames= function () {
+  // ***** UTILS *****
+  function loadJS(FILE_URL, callback) {
+    let scriptEle = document.createElement("script");
+  
+    scriptEle.setAttribute("src", FILE_URL);
+    scriptEle.setAttribute("type", "text/javascript");
+    scriptEle.setAttribute("async", true);
+  
+    document.body.appendChild(scriptEle);
+    
+    // Success
+    scriptEle.addEventListener("load", () => {
+      console.log("--fx--gdsdk--loadJS Done--");
+      callback(true);
+    });
+    
+     // Error
+    scriptEle.addEventListener("error", () => {
+      console.log("--fx--gdsdk--loadJS Error--");
+      callback(false);
+    });
+  }
+  
   // ***** INITALIZE *****
   this.forgames= YYGamesList;
 
-  this.init=function(options) {
-    consoleLog("--fx--YYGGames--init--");
-    options.complete();    
+  this.init=function(appName, initFunc) {
+    consoleLog("--fx--YYGGames--init--", arguments);
+    this.appName= appName;
+    setTimeout(initFunc, 1000);
+    // options.complete();
     return true;
   }
 
   this.__init__= function() {
     consoleLog("--fx--YYGGames--__init__--", arguments);
   }
+
+  this.icon= {}
+  this.gameBox= {
+    "game1": {},
+    "game2": {},
+  }
+  this.gameBanner= {}
   
   this.startupByYad= function (obj) {
     console.log("--fx--YYGGames--startupByYad--", obj);
@@ -75,21 +132,34 @@ YYGGames= function () {
     consoleLog("--fx--YYGGames--showSplash--", arguments);
   }
     
-  this.showInterstitial= function(options) {
-    consoleLog("--fx--showInterstitial--", options);
-    options.beforeShowAd();
-    options.afterShowAd();    
+  this.showInterstitial= function(func) {
+    consoleLog("--fx--showInterstitial--", arguments);
+    loadJS("https://www.ubg235.com/ads/commercial.js", (success)=> {
+      if (success) {
+        console.log("--fx--showInterstitial--Done--");        
+      } else {
+        console.log("--fx--showInterstitial--Rejected--");
+      }
+      func();
+    });
     return true;
   }
 
-  this.showReward= function(options) {
-    options.rewardComplete();
+  this.showReward= function(func) {    
     consoleLog("--fx--showReward--", arguments);
+    loadJS("https://www.ubg235.com/ads/rewarded.js", (success)=> {
+      if (success) {
+        console.log("--fx--showReward--Done--");
+        func();
+      } else {
+        console.log("--fx--showReward--Rejected--");
+      }
+    });    
   }
 
-  this.onAfterShowAd= function(callback) {
+  this.onAfterShowAd= function(func) {
     consoleLog("--fx--onAfterShowAd--", arguments);
-    callback();
+    func();
     return true;
   }
 
@@ -99,8 +169,8 @@ YYGGames= function () {
   }
 
   this.adsManager= {
-    request: function(k) {
-      consoleLog("--fx--adsManager--request--", k);      
+    request: function(arguments) {
+      consoleLog("--fx--adsManager--request--", arguments);      
     }
   };
 
@@ -110,5 +180,4 @@ YYGGames= function () {
   }
 }
 
-YYGSDK= new YYGGames();
 YYGGames= new YYGGames();

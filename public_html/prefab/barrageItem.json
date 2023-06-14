@@ -1,0 +1,1 @@
+{"type":"Box","props":{"y":0,"x":0,"var":"messageItem","styleSkin":"game/box_tips1.png","presetID":1,"isPresetRoot":true},"compId":50,"child":[{"type":"Image","props":{"skin":"game/box_tips2.png","presetID":2,"name":"icon"},"compId":51}],"loadList":["game/box_tips1.png","game/box_tips2.png"],"loadList3D":[]}

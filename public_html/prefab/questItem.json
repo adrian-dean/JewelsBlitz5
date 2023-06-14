@@ -1,0 +1,202 @@
+{
+    "type": "Box",
+    "props": {
+        "y": 0,
+        "x": 0,
+        "width": 498,
+        "presetID": 1,
+        "isPresetRoot": true,
+        "height": 123
+    },
+    "compId": 21,
+    "child": [
+        {
+            "type": "Image",
+            "props": {
+                "y": -3,
+                "x": 0,
+                "width": 498,
+                "skin": "game/buildBannar_bg.png",
+                "sizeGrid": "62,49,52,27,1",
+                "presetID": 2,
+                "name": "bg",
+                "height": 116
+            },
+            "compId": 20
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 118,
+                "x": 1,
+                "width": 498,
+                "skin": "game/build_bannar_line.png",
+                "presetID": 12,
+                "name": "bannar_line",
+                "height": 2,
+                "alpha": 0.5
+            },
+            "compId": 33
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 9.5,
+                "x": 21,
+                "width": 90,
+                "skin": "game/builditem_iconBG.png",
+                "sizeGrid": "42,45,43,34",
+                "presetID": 5,
+                "height": 91
+            },
+            "compId": 25
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 55,
+                "x": 66.5,
+                "width": 86,
+                "skin": "itemicon/S1Board.png",
+                "presetID": 3,
+                "name": "icon",
+                "height": 86,
+                "anchorY": 0.5,
+                "anchorX": 0.5
+            },
+            "compId": 22
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 21,
+                "x": 163.5,
+                "text": "建造10块船板",
+                "presetID": 6,
+                "name": "desc",
+                "fontSize": 28,
+                "font": "Microsoft YaHei",
+                "color": "#382d26",
+                "bold": true,
+                "runtime": "Laya.Text"
+            },
+            "compId": 27
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 74,
+                "x": 165.5,
+                "text": "奖励：",
+                "presetID": 7,
+                "fontSize": 22,
+                "font": "Microsoft YaHei",
+                "color": "#3b3231",
+                "bold": true,
+                "runtime": "Laya.Text"
+            },
+            "compId": 28
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 62,
+                "x": 249,
+                "width": 35,
+                "texture": "game/res_wood_icon.png",
+                "presetID": 8,
+                "height": 37
+            },
+            "compId": 29
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 70,
+                "x": 303,
+                "text": "500",
+                "presetID": 9,
+                "name": "rewardnum",
+                "fontSize": 28,
+                "font": "Microsoft YaHei",
+                "color": "#3b3231",
+                "bold": true,
+                "runtime": "Laya.Text"
+            },
+            "compId": 30
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": -3,
+                "x": 425,
+                "width": 73,
+                "visible": false,
+                "skin": "game/tipsBG.png",
+                "sizeGrid": "10,6,14,12",
+                "presetID": 10,
+                "name": "tips",
+                "height": 32
+            },
+            "compId": 31,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 4,
+                        "x": 1,
+                        "width": 71,
+                        "valign": "middle",
+                        "text": "New",
+                        "presetID": 13,
+                        "height": 26,
+                        "fontSize": 20,
+                        "font": "Microsoft YaHei",
+                        "color": "#ffffff",
+                        "bold": true,
+                        "align": "center",
+                        "runtime": "Laya.Text"
+                    },
+                    "compId": 34
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 1,
+                "x": 0,
+                "width": 498,
+                "skin": "game/achi_bannar_mask.png",
+                "sizeGrid": "40,35,39,34",
+                "presetID": 4,
+                "name": "itemmask",
+                "height": 115
+            },
+            "compId": 24,
+            "child": [
+                {
+                    "type": "Sprite",
+                    "props": {
+                        "y": 30,
+                        "x": 403,
+                        "texture": "game/buildBannar_done.png",
+                        "presetID": 11
+                    },
+                    "compId": 32
+                }
+            ]
+        }
+    ],
+    "loadList": [
+        "game/buildBannar_bg.png",
+        "game/build_bannar_line.png",
+        "game/builditem_iconBG.png",
+        "itemicon/S1Board.png",
+        "game/res_wood_icon.png",
+        "game/tipsBG.png",
+        "game/achi_bannar_mask.png",
+        "game/buildBannar_done.png"
+    ],
+    "loadList3D": []
+}

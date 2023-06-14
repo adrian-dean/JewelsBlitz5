@@ -168,11 +168,13 @@ gdsdk= function() {
     }
   };
 
-  window.GD_OPTIONS.onEvent({
-    "name": "SDK_READY",
-    "message": "Everything is ready.",
-    "status": "success"
-  });
+  try {
+    window.GD_OPTIONS.onEvent({
+      "name": "SDK_READY",
+      "message": "Everything is ready.",
+      "status": "success"
+    });  
+  } catch (e) {}  
 };
 
 gdsdk= new gdsdk();

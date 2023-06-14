@@ -1,89 +1,167 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
 
 <head>
-  <title>Fish Story 2 Unblocked - ubg235</title>
-  <meta charset="utf-8">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="HandheldFriendly" content="true" />
-  <meta name="robots" content="noindex,nofollow" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <meta name="apple-mobile-web-app-title" content="Phaser App">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.01">
+	<meta charset='utf-8' />
+	<meta name='renderer' content='webkit' />
+	<meta name='viewport'
+		content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' />
 
-  <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
-  <meta name="screen-orientation" content="portrait" />
-  <style type="text/css">
-    #orientation {
-      margin: 0 auto;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 110%;
-      background-image: url('img/rotate.jpg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: rgb(0, 0, 0);
-      z-index: 999;
-      display: none;
-    }
-  </style>
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='full-screen' content='true' />
+	<meta name='x5-fullscreen' content='true' />
+	<meta name='360-fullscreen' content='true' />
+	<meta name='laya' screenorientation='landscape' />
+	<meta http-equiv='expires' content='0' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<meta http-equiv='expires' content='0' />
+	<meta http-equiv='Cache-Control' content='no-siteapp' />
+	<title>Idle Desert Life Unblocked - ubg235 GD</title>
+	<style>
+		@font-face {
+			font-family: "Arial";
+			src: url("rrzzhh.ttf");
+		}
 
+		* {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
 
-  <!-- production -->
+		body {
+			overflow: 'hidden';
+			/* 页面背景颜色 */
+			background: #AD9EE7
+		}
+
+		#unity-container {
+			z-index: 1000;
+			background: #AD9EE7;
+			position: absolute;
+			overflow: hidden;
+		}
+
+		#LoadingView {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+			transform: translate(-50%, -50%);
+
+			text-align: center;
+		}
+
+		#top-container {
+			flex: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			/* 距离顶部位置 */
+			margin-top: 10%;
+		}
+
+		#progress {
+			flex: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: absolute;
+			bottom: 10%;
+		}
+
+		div {
+			text-align: center;
+		}
+	</style>
   <script>
-    window.jsInitTime = Date.now(); // set earliest javascript execution time
-  </script>
+    consoleLog= console.log;
+  </script>  
+	<script type="text/javascript" src="patch/js/YYGGames.js?h5gamessdk.yyggames.com/sdk/YYGGames.js" data-adapter="laya"
+		data-channel="yad"></script><script type="text/javascript" src="patch/js/YYGGamesBundle-o.js?h5gamessdk.yyggames.com/sdk/YYGGamesBundle.js"></script>
+
+	<!-- <script type="text/javascript" src="libs/htmlfs.js"></script> -->
 </head>
 
 <body>
-  <div id="orientation"></div>
-  <div id="gameFontPreload" class="unselectable">
-    <div style="font-family: Lobster" class='fontPreload'>.</div>
-    <script src="js/ua-parser.min.js"></script>
-    <script src="js/custom-phaser.min.js"></script>
-    <script src="js/phaser-debug.js"></script>
-    <script src="js/phaser-nineslice-softgames.js"></script>
-    <script id="lzutf8" src="js/lzutf8.min.js"></script>
-    <script src="js/game.js"></script>
-    <script src="lib/AzerionWrapper_v2.5.4.js"></script>
-  </div>
-  <script>
-    window.onWrapperReady = () => {
-      window._ = _; // create global ref for lodash
+	<script src="./adapter/Adapter.js"></script>
+	<div id="unity-container">
+		<div id="LoadingView">
+			<div id="top-container">
+				<img id="logo" src="./adapter/logo.png"></img>
+				<!-- //大图距离logo 的位置 margin-top: -->
+				<img id="thumbnail" src="./adapter/banner.jpg"
+					style="margin-top: 20%; border-radius:10px;border:2px solid #FFF; "></img>
 
-      if (window.G != undefined) {
-        if (FBInstant.deviceDectorFunctions().isMobileOrTab()) {
-          var setOrientation = () => {
-            document.getElementById("orientation").style.display = (window.orientation == 0) ? "none" : "block";
-          }
 
-          window.addEventListener("orientationchange", () => {
-            setOrientation();
-          });
-          setOrientation();
-          window.setTimeout(() => {
-            setOrientation();
-          }, 1000)
-        }
-        initGame();
-        return;
-      }
+			</div>
 
-      var iID = setInterval(() => {
-        if (G) {
-          initGame();
-          clearInterval(iID);
-        }
-      }, 200);
-    };
-  </script>
+			<div id="progress" style="position:absolute;bottom:15%;width: 100%;">
+				<p id="LoadingText" style="width: 100%; color:#faf6f6;text-align:center;font-family: Arial;
+						font-size:24px;">
+					Loading...
+				</p>
+				<!-- abcdefghijlmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.0123456789;:''"",。<>/?\|-_=+/*`~!@#$%^&*()~！@#￥%……&*（）·《》，。？、：”{}|；’【】、 -->
+				<!-- <img id="floot" src="./adapter/yad.png" style="padding-top:20%;" width="200px" height="150px"
+					onclick="Adapter.navigate('yad')"></img> -->
+			</div>
+
+
+
+		</div>
+	</div>
+
+	<script>
+		console.log = console.info = console.warn = function () { };
+		Adapter.init(750, 1334);
+		// Adapter.hideLoading()
+		const keysToBlockWhenFramed = [32, 33, 34, 35, 36, 37, 38, 39, 40, 44];
+		document.addEventListener('keydown', function (info) {
+			if (window != window.top && keysToBlockWhenFramed.indexOf(info.which) > -1) {
+				info.preventDefault();
+				info.stopPropagation();
+			}
+		}, true)
+		document.addEventListener("mousedown", function () {
+			window.focus();
+		}, true);
+		document.addEventListener("touchstart", function () {
+			window.focus();
+		}, true);
+
+		//游戏加载时关闭触控
+		document.addEventListener('gesturestart', function (event) {
+			event.preventDefault()
+		})
+
+
+		function loadLib(url) {
+			var script = document.createElement("script");
+			script.async = false;
+			script.src = url;
+			document.body.appendChild(script);
+		}
+	</script>
+	
+	<!-- 引类库 -->
+	<!-- <script type="text/javascript" src="https://h5gamessdk.yyggames.com/sdk/laya/2.9.0/laya.core.js"></script>
+
+	<script type="text/javascript" src="https://h5gamessdk.yyggames.com/sdk/laya/2.9.0/laya.ani.js"></script>
+
+	<script type="text/javascript" src="https://h5gamessdk.yyggames.com/sdk/laya/2.9.0/laya.d3.js"></script>
+
+	<script type="text/javascript" src="https://h5gamessdk.yyggames.com/sdk/laya/2.9.0/laya.html.js"></script>
+
+	<script type="text/javascript" src="https://h5gamessdk.yyggames.com/sdk/laya/2.9.0/laya.particle.js"></script> -->
+
+
+
+
+
+	<script type="text/javascript" src="index.js"></script>
+
 </body>
 
 </html>

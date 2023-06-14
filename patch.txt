@@ -1,5 +1,15 @@
-/home/runner/fish-story-2/public_html/lib/AzerionWrapper_v2.5.4.js
+public_html/index.html
 data/patch_guide.txt
-https://html5.api.gamedistribution.com/main.min.js
-patch/js/gd-sdk.js?html5.api.gamedistribution.com/main.min.js
+https://h5gamessdk.yyggames.com/sdk/YYGGames.js
+patch/js/YYGGames-o.js?h5gamessdk.yyggames.com/sdk/YYGGames.js
+
+public_html/index.html
+data/patch_guide.txt
+https://h5gamessdk.yyggames.com/sdk/YYGGamesBundle.js
+patch/js/YYGGamesBundle-o.js?h5gamessdk.yyggames.com/sdk/YYGGamesBundle.js
+
+/home/runner/idle-desert-life/public_html/adapter/Adapter.js
+data/patch_guide_null.txt
+window.open(
+window.xopen(
 

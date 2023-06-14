@@ -8,7 +8,13 @@ patch/js/gd-sdk.js?html5.api.gamedistribution.com/main.min.js
 
 https://h5gamessdk.yyggames.com/sdk/YYGSDK.js
 //h5gamessdk.yyggames.com/sdk/YYGSDK.js
-patch/js/YYGGames.js
+patch/js/YYGSDK.js?h5gamessdk.yyggames.com/sdk/YYGSDK.js
+
+https://h5gamessdk.yyggames.com/sdk/YYGGames.js
+patch/js/YYGGames.js?h5gamessdk.yyggames.com/sdk/YYGGames.js
+
+https://h5gamessdk.yyggames.com/sdk/YYGGamesBundle.js
+patch/js/YYGGamesBundle.js?h5gamessdk.yyggames.com/sdk/YYGGamesBundle.js
 
 ${a}/gamepush.js
 patch/js/eponesh-gamepush.js
