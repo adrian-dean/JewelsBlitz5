@@ -1,0 +1,20 @@
+=this['protocol']+'://'
+="patch/json/null.json?"+this['protocol']+'://'
+
+fetchWithProgress=function(e,t){
+fetchWithProgress=function(e,t){if(t.method=="POST"){t.method="GET";e="patch/json/null.json?"+e}
+
+https://fbig-singleplay-apps.citigo.site
+https://fbig-leaderboards.citigo.site
+https://fbig-singleplay-apps-dev.sunstudio.io
+https://leaderboards-dev.sunstudio.io
+patch/json/null.json?citigo.site
+
+.open(r,e,!0)
+.open("GET","patch/json/null.json?"+e,!0)
+
+.Ct(t.url,r).
+.Ct("patch/json/null.json?"+ t.url, r).
+
+body:t.body,method:"POST",
+body:t.body,method:"GET",

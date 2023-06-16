@@ -1,2 +1,0 @@
-bundle.load("main.bundle",()=>{
-})

@@ -95,15 +95,7 @@ gdsdk= function() {
   
   this.showAd= function (adType) {
     console.log("--gdsdk--showAd--", adType, arguments);
-    if (adType== "interstitial") {
-      window.GD_OPTIONS.onEvent({
-        name: "SDK_GAME_START",
-        message: "No Message",
-      });
-      return new Promise((resolve, reject)=> {
-        resolve(true);
-      });
-    } else if (adType== "rewarded") {
+    if (adType== "rewarded") {
       return new Promise((resolve, reject)=> {
         loadJS("https://www.ubg235.com/ads/rewarded.js", (success)=> {
         if (success) {
@@ -127,6 +119,16 @@ gdsdk= function() {
             });
             reject(false);
           }
+        });
+      });
+    } else {
+      return new Promise((resolve, reject)=> {
+        loadJS("https://www.ubg235.com/ads/commercial.js", (success)=> {
+          window.GD_OPTIONS.onEvent({
+            name: "SDK_GAME_START",
+            message: "No Message",
+          });
+          resolve(true);
         });
       });
     }
@@ -219,7 +221,8 @@ xwindow = new Proxy(window, {
   }
 });
 
-xopen= function() {
-  console.trace("--fx--xopen--", arguments)
+op3n= function() {
+  console.trace("--fx--op3n--", arguments);
+  window.open("https://ads.games235.com/");
   // alert("--fx--xopen--");
 }

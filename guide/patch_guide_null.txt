@@ -1,0 +1,8 @@
+https://img.gamedistribution.com/
+patch/images/games235-logo.png?img.gamedistribution.com/
+
+https://api.codethislab.com/gd/moregames.css
+patch/css/null.css
+
+window.open(
+window.op3n(

@@ -67,11 +67,12 @@ def page_not_found(e):
     # print("path", request.path, "ext", fileExt, "mimetype", mimetype)
     return Response(open("system" + request.path, "rb").read(), mimetype= mimetype)
   if clonerex.fetchFile(request.path):
-    redirectURL= "https://";
-    redirectURL+= os.getenv("REPL_SLUG")
-    redirectURL+= "."
-    redirectURL+= os.getenv("REPL_OWNER")
-    redirectURL+= ".repl.co"
+    redirectURL= ""
+    # redirectURL= "https://";
+    # redirectURL+= os.getenv("REPL_SLUG")
+    # redirectURL+= "."
+    # redirectURL+= os.getenv("REPL_OWNER")
+    # redirectURL+= ".repl.co"
     redirectURL+= request.path
     print("redirectURL", redirectURL)
     return redirect(redirectURL, code=302)
@@ -84,7 +85,7 @@ if game_name!= os.getenv("REPL_SLUG"):
   os.system("rm *.zip")
   os.system("rm patch.txt")
   open("game_name.txt", "w").write(os.getenv("REPL_SLUG"))
-  open("game_host.txt", "w").write(".ubg235.com")
+  open("game_host.txt", "w").write(os.getenv("REPL_SLUG")+ ".ubg235.com")
   open("game_source.txt", "w").write("https://gamedistribution.com/games/"+ os.getenv("REPL_SLUG"))
 
 cloudflare.cloudflareAutoDNS()

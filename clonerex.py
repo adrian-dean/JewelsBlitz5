@@ -12,13 +12,13 @@ headers_html = {
 
 
 def patchContent(file_name, content):
-  PATCH_GUIDE = [
-    "data/patch_guide.txt", "data/patch_guide_null.txt",
-    "data/patch_guide_unity.txt", "data/patch_guide_ajax.txt",
-    "data/patch_guide_cdn.txt", "data/patch_guide_special.txt"
-  ]
+  PATCH_GUIDE= []
+  obj = os.scandir("guide")
+  for entry in obj:
+    if entry.is_file() and entry.name.find(".txt")!= -1:
+      PATCH_GUIDE.append(entry.name)
   for patch_guide in PATCH_GUIDE:
-    vPATCH_GUIDE_SUB = open(patch_guide).read().strip().replace(
+    vPATCH_GUIDE_SUB = open(f"guide/{patch_guide}").read().strip().replace(
       "\r", "").split("\n\n")
     for patch_guide_sub in vPATCH_GUIDE_SUB:
       # print("patch_guide_sub", patch_guide_sub, "\n")
@@ -37,7 +37,7 @@ def writeFile(file_name, file_content):
   fw = open(file_name, "wb")
   fcntl.flock(fw, fcntl.LOCK_EX)
   if type(file_content) is str:
-    textContent = file_content
+    file_content = patchContent(file_name, file_content)
     file_content = bytes(file_content, 'utf-8')
   else:
     if file_name.find(".unityweb") != -1:
@@ -107,4 +107,11 @@ def getIndex():
       game_source = "https://" + game_source.split("index.html")[0]
       writeFile("game_source.txt", game_source)
       return getIndex()
-    writeFile("public_html/index.html", res.content)
+    htmlTitle= "Unblocked - ubg235 GD"
+    htmlContent= res.text
+    if htmlContent.find("</title>")!= -1:
+      if htmlContent.find(f"{htmlTitle}</title>")== -1:
+        htmlContent= htmlContent.replace("</title>", f" {htmlTitle}</title>")
+      if htmlContent.find("<body>")!= -1:
+        htmlContent= htmlContent.replace("<body>", "<body style=\"overflow:hidden;\">") 
+    writeFile("public_html/index.html", htmlContent)
