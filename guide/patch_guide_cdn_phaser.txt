@@ -18,3 +18,9 @@ patch/cdn/phaser/phaser-spine.min.js
 
 https://cdn.jsdelivr.net/npm/@orange-games/phaser-ads@2.2/build/phaser-ads.min.js
 patch/cdn/phaser/phaser-ads.min.js
+
+https://cdn.jsdelivr.net/npm/@azerion/phaser-nineslice@2.0/build/phaser-nineslice.min.js
+patch/cdn/phaser/2.0/phaser-nineslice.min.js
+
+https://cdn.jsdelivr.net/npm/@azerion/phaser-input@2.0/build/phaser-input.min.js
+patch/cdn/phaser/2.0/phaser-input.min.js
