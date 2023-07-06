@@ -6,3 +6,6 @@ this.circleLoader.animate(1,null,function(){h5branding.SplashLoader.getInstance(
 
 .preload=function(t){v
 .preload=function(t){return false;v
+
+.preload=function(e){v
+.preload=function(e){return false;v

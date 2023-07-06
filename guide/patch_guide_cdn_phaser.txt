@@ -24,3 +24,6 @@ patch/cdn/phaser/2.0/phaser-nineslice.min.js
 
 https://cdn.jsdelivr.net/npm/@azerion/phaser-input@2.0/build/phaser-input.min.js
 patch/cdn/phaser/2.0/phaser-input.min.js
+
+https://cdn.jsdelivr.net/npm/@azerion/phaser-i18next@1.0/build/phaser-i18next.min.js
+patch/cdn/phaser/phaser-i18next.min.js
