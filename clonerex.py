@@ -107,11 +107,12 @@ def getIndex():
       game_source = "https://" + game_source.split("index.html")[0]
       writeFile("game_source.txt", game_source)
       return getIndex()
-    htmlTitle= "Unblocked - ubg235 GD"
-    htmlContent= res.text
+    htmlTitle= "Unblocked - ubg235 GameDistribution"
+    htmlContent= res.content.decode("utf8")
     if htmlContent.find("</title>")!= -1:
       if htmlContent.find(f"{htmlTitle}</title>")== -1:
         htmlContent= htmlContent.replace("</title>", f" {htmlTitle}</title>")
       if htmlContent.find("<body>")!= -1:
         htmlContent= htmlContent.replace("<body>", "<body style=\"overflow:hidden;\">") 
-    writeFile("public_html/index.html", htmlContent)
+    if htmlContent.find("<title>Server error")== -1:
+      writeFile("public_html/index.html", htmlContent)
