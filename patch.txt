@@ -1,10 +1,5 @@
-/home/runner/ninja-cat-exploit/public_html/c2runtime.js
+/home/runner/farm-match-seasons/public_html/lib/AzerionWrapper_v2.7.7.js
 patch_guide.txt
-//html5.api.gamedistribution.com/libs/gd/api.js
-patch/js/gd-sdk.js?html5.api.gamedistribution.com/libs/gd/api.js
-
-/home/runner/ninja-cat-exploit/public_html/c2runtime.js
-patch_guide_null.txt
-window.open(
-window.op3n(
+https://html5.api.gamedistribution.com/main.min.js
+patch/js/gd-sdk.js?html5.api.gamedistribution.com/main.min.js
 

@@ -15,3 +15,6 @@ patch/js/null.js?https://api.codethislab.com/gd/moregames.js
 
 this.baseUrl=this.protocol+"://"+this.hostName+"/"
 this.baseUrl="patch/js/null.js?"+this.protocol+"://"+this.hostName+"/"
+
+https://storage.googleapis.com/cdn.fbrq.io/anyad.js
+patch/js/null.js?storage.googleapis.com/cdn.fbrq.io/anyad.js

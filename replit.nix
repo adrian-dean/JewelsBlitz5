@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+    pkgs.wget
     pkgs.nano
     pkgs.zip
     pkgs.python310Full

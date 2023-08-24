@@ -1,13 +1,27 @@
 import requests
 import fcntl
+import json
 import os
 import unity
 
 headers_html = {
-  "Content-Type":
-  "text/html; charset=utf-8",
-  "User-Agent":
-  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36"
+  "Content-Type": "text/html; charset=utf-8",  
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36"
+}
+
+headers_json = {
+  "Accept": "application/json",
+  "Content-Type": "application/json",  
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36"
+}
+
+graph_ql= {
+    "operationName": "GetGameSearched",
+    "variables": {
+        "id": "",
+        "slug": "farm-match-seasons"
+    },
+    "query": "fragment CoreGame on SearchHit {\n  objectID\n  title\n  company\n  visible\n  tags\n  categories\n  https\n  type\n  exclusiveGame\n  mobile\n  bundles {\n    name\n    type\n    __typename\n  }\n  md5\n  slugs {\n    name\n    active\n    __typename\n  }\n  assets {\n    name\n    width\n    height\n    __typename\n  }\n  __typename\n}\n\nquery GetGameSearched($id: String!, $slug: String!) {\n  gameSearched(input: {objectId: $id, slug: $slug}) {\n    ...CoreGame\n    publishedAt\n    lastPublishedAt\n    tier\n    languages\n    isSearchable\n    width\n    height\n    description\n    similarGames {\n      objectID\n      md5\n      type\n      title\n      company\n      exclusiveGame\n      slugs {\n        name\n        active\n        __typename\n      }\n      assets {\n        name\n        width\n        height\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"
 }
 
 
@@ -92,6 +106,25 @@ def getIndex():
   except:
     pass
   else:
+    if res.text.find("document.getElementById('nuxt-loading');") != -1:            
+      try:
+        game_slug= game_source.split("/games/")[1].split("/")[0]
+        graph_ql["variables"]["slug"]= game_slug
+        print("graph_ql", graph_ql)
+        res = requests.post("https://gd-website-api.gamedistribution.com/graphql", headers=headers_json, data=json.dumps(graph_ql), timeout=5)
+      except:
+        return
+      else:
+        # print("res.text", res.text)
+        try:
+          objectID= res.text.split("\"objectID\":\"")[1]
+          objectID= objectID.split("\"")[0]
+          print("objectID", objectID)
+          writeFile("game_source.txt", f"https://html5.gamedistribution.com/{objectID}")
+          return getIndex()
+        except:          
+          return
+      
     if res.text.find("then your request url should be as follows") != -1:
       game_source = res.text.split(
         "then your request url should be as follows")[1]
