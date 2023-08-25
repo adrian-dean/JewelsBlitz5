@@ -1,70 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui, shrink-to-fit=no" />
+<html>
+  <head>
+    <script>
+      window._game_loading_timer = Date.now()
+    </script>
+    <title>Jewels Blitz Unblocked - ubg235 GameDistribution</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="robots" content="noindex,nofollow">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Phaser App">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.01">
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8">
+    <script type="text/javascript">
+      window.sgPlatform = 'fbinstant'
+    </script>
 
+    <!-- Facebook Pixel Code -->
+    <!-- <script>
+      ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '485065648575525');
+      fbq('track', "PageView");
+    </script> -->
 
+    <!-- End Facebook Pixel Code -->
+    <script>
+      window.jsInitTime = Date.now(); // set earliest javascript execution time
+    </script>
+    <script src="js/raven.min.js"></script>
 
-    
-    <title>Money Movers 2 Unblocked - ubg235 GD</title>
-    
-    <link rel="stylesheet" href="assets/css/app.css" type="text/css"/>
-    
-    
-    
-
-    
-    
-    
-</head>
-<body style="overflow:hidden;">
-
-
-
-<div id="content"></div>
-<div id="orientation"></div>
-<div id="loader">Loading...</div>
-
-<script type="text/javascript">
-    
-    var _azerionIntegration = {"alxType":"std","af":false,"sa":false,"la":false,"bd":0,"playBtn":true,"cp":false}
-    
-
-
-    
-    var gameName = "money-movers-2.min.js";
-    
-    
-    var phaserAdProvider;
-    
-    
-    
-        
-
-        //This all here is for cache busting;
-        function addScript(src, buster, callback) {
-            var s = document.createElement('script');
-            s.setAttribute('src', src + '?v=' + buster);
-            if (typeof callback === 'function') {
-                s.onload = callback;
-            }
-            document.body.appendChild(s);
-        }
-
-
-        
-        addScript('version.js', Date.now(), function () {
-            
-            addScript(gameName, version, function () {
-                var game = new MoneyMovers2.Game();
-            });
-            
-        });
-        
-
-</script>
-</body>
+    <!-- production -->
+    <script src="js/custom-phaser.min.js"></script>
+    <script src="js/phaser-nineslice-softgames.js"></script>
+    <script src="js/DDNAHandler_0.10.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      window.onWrapperReady = ()=> {
+        initGame();
+      }
+    </script>
+  </head>
+  <body style="overflow:hidden;">
+    <div id="gameFontPreload">
+      <div style="font-family: Lobster" class="fontPreload">.</div>
+      <div style="font-family: RubikBold" class="fontPreload">.</div>
+    </div>
+    <script src="patch/js/AzerionWrapper.js"></script>
+  </body>
 </html>

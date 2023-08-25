@@ -1,3 +1,8 @@
+lib/AzerionWrapper_v2.7.7.js
+lib/AzerionWrapper_v2.5.9.js
+lib/AzerionWrapper_v2.5.5.js
+patch/js/AzerionWrapper.js
+
 https://yandex.ru/games/sdk/v2
 patch/js/null.js?https://yandex.ru/games/sdk/v2
 
@@ -15,3 +20,6 @@ patch/js/null.js?https://api.codethislab.com/gd/moregames.js
 
 this.baseUrl=this.protocol+"://"+this.hostName+"/"
 this.baseUrl="patch/js/null.js?"+this.protocol+"://"+this.hostName+"/"
+
+https://storage.googleapis.com/cdn.fbrq.io/anyad.js
+patch/js/null.js?storage.googleapis.com/cdn.fbrq.io/anyad.js

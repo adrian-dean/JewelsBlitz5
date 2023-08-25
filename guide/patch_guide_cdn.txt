@@ -18,3 +18,6 @@ patch/cdn/ionicons.2.0.1.min.css
 
 https://use.fontawesome.com/releases/v5.12.0/css/all.css
 patch/cdn/fontawesome.5.12.0.all.css
+
+//cdn.raygun.io/raygun4js/raygun.min.js
+patch/cdn/raygun/raygun.min.js
