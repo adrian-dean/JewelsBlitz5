@@ -1,0 +1,16 @@
+guide
+public_html
+system
+
+cloner.py
+clonerex.py
+cloudflare.py
+unity.py
+main.py
+
+game_host.txt
+game_name.txt
+game_source.txt
+
+venv
+__pycache__

@@ -1,3 +1,7 @@
+lib/AzerionWrapper_v2.7.7.js
+lib/AzerionWrapper_v2.5.9.js
+patch/js/AzerionWrapper.js
+
 https://yandex.ru/games/sdk/v2
 patch/js/null.js?https://yandex.ru/games/sdk/v2
 
